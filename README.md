@@ -30,6 +30,3 @@ Para iniciar o projeto localmente, siga estas etapas:
 ### 3. Execute o projeto usando um servidor local ou a ferramenta de desenvolvimento fornecida pelo framework de sua escolha.
 
 ### 4. Acesse o aplicativo em seu navegador da web
-
-
-
