@@ -1,5 +1,5 @@
 # Desafio Angular
-## Desenvolvimento de Páginas de Consulta e Exibição de Dados de Cooperados Ailos
+### Desenvolvimento de Páginas de Consulta e Exibição de Dados de Cooperados Ailos
 
 Este repositório contém o código-fonte para o desafio de desenvolvimento de duas páginas web. A primeira página apresenta um formulário de consulta de CPF, com a capacidade de processar dois cenários distintos: o cenário de insucesso, onde o CPF inserido não é válido, resultando em uma mensagem de erro exibida na tela, e o cenário de sucesso, onde o CPF é válido e o usuário é redirecionado para a segunda página.
 
