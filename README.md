@@ -1,27 +1,34 @@
-# AilosDanielLuz
+# Desafio - Desenvolvimento de Páginas de Consulta e Exibição de Dados de Cooperados Ailos Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.7.
+Este repositório contém o código-fonte para o desafio de desenvolvimento de duas páginas web. A primeira página apresenta um formulário de consulta de CPF, com a capacidade de processar dois cenários distintos: o cenário de insucesso, onde o CPF inserido não é válido, resultando em uma mensagem de erro exibida na tela, e o cenário de sucesso, onde o CPF é válido e o usuário é redirecionado para a segunda página.
 
-## Development server
+## Funcionalidades
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### Página 1 - Consulta de CPF
 
-## Code scaffolding
+Um formulário simples permite aos usuários inserir um CPF.
+A consulta do CPF pode resultar em dois cenários:
+Cenário de Insucesso: Quando o CPF inserido não é válido, uma mensagem de erro é exibida na tela para informar o usuário.
+Cenário Feliz: Quando o CPF é localizado com sucesso, o usuário é automaticamente direcionado para a "Tela Dois".
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Página 2 - Dados do Cooperado
 
-## Build
+Após inserir um CPF válido no formulário da "Página 1" e ser redirecionado para a "Tela Dois", esta página carrega os dados do cooperado associados ao CPF.
+A interface da "Tela Dois" segue o modelo de design especificado.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Como iniciar o projeto
 
-## Running unit tests
+Para iniciar o projeto localmente, siga estas etapas:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### 1. Clone este repositório para sua máquina local usando o seguinte comando:
+`git clone https://github.com/danisluz/ailos.git`
 
-## Running end-to-end tests
+### 2. Navegue para o diretório do projeto:
+`cd ailos-daniel-luz`
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### 3. Execute o projeto usando um servidor local ou a ferramenta de desenvolvimento fornecida pelo framework de sua escolha.
 
-## Further help
+### 4. Acesse o aplicativo em seu navegador da web
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
