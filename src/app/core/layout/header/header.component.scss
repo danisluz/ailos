@@ -1,0 +1,48 @@
+@import '../../../../styles.scss';
+
+.header {
+  background-color: $branco;
+  color: $preto;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 24px;
+
+  .wrapper-left {
+    text-align: left;
+
+    .breadcrumb {
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 18px;
+    }
+  }
+
+  .wrapper-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    .user-avatar{
+      width: 42px;
+      height: 42px;
+      flex-shrink: 0;
+      border-radius: 42px;
+      border: 1px solid $azul;
+    }
+    
+    .client-name {
+      padding: 5px 15px;
+      border: 1px solid $azul;
+      font-size: 16px;
+      font-family: $font-exo;
+      font-weight: 700;
+      border-radius: 25px;
+      color: $azul;
+    }
+
+  }
+
+}

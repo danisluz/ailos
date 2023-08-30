@@ -1,11 +1,6 @@
 @import './assets/styles/normalize.scss';
 @import './assets/styles/vars.scss';
 
-@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@600;700&family=Open+Sans:wght@400;600&display=swap');
-
-$font-exo: "Exo 2", sans-serif;
-$font-open-sans: "Open Sans", sans-serif;
-
 body {
   font-family: $font-open-sans;
   font-size: 11px;
@@ -16,6 +11,14 @@ body {
   -moz-appearance: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+body, html, p, h1, h2, h3, h4, span {
+  margin: 0;
+  padding: 0;
 }
 
 p {
@@ -27,7 +30,10 @@ p {
 h1 {
   font-family: $font-exo;
   color: $preto;
+  font-size: 24px;
+  font-style: normal;
   font-weight: 700;
+  line-height: 32px;
 }
 
 h2, h3 {

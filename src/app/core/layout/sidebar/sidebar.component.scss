@@ -1,0 +1,10 @@
+@import '../../../../styles.scss';
+
+.sidebar {
+  width: 100px;
+  min-height: 100vh;
+  background-color: $azul;
+  color: $cinza-4;
+  display: flex;
+  flex-direction: column;
+}
