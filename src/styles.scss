@@ -1,1 +1,37 @@
-/* You can add global styles to this file, and also import other style files */
+@import './assets/styles/normalize.scss';
+@import './assets/styles/vars.scss';
+
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@600;700&family=Open+Sans:wght@400;600&display=swap');
+
+$font-exo: "Exo 2", sans-serif;
+$font-open-sans: "Open Sans", sans-serif;
+
+body {
+  font-family: $font-open-sans;
+  font-size: 11px;
+  color: $preto;
+  appearance: none;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+p {
+  font-family: $font-open-sans;
+  color: $cinza-4;
+  font-size: 11px;
+}
+
+h1 {
+  font-family: $font-exo;
+  color: $preto;
+  font-weight: 700;
+}
+
+h2, h3 {
+  font-family: $font-exo;
+  color: $preto;
+  font-weight: 600;
+}
