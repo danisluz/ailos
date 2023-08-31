@@ -29,15 +29,76 @@
   </p>
 
   <div class="row">
-    <label>CPF</label>
-    <input
-      type="text"
-      id="cpf"
-      name="cpf"
-      placeholder="000.000.000-00"
-      formControlName="cpf"
-    />
+    <label class="label-input">CPF</label>
+    <div class="wrapper">
+      <input class="input-standard" name="cpf" placeholder="000.000.000-00" size="30" formControlName="cpf" />
+      <button class="button-01-azul">Consultar por CPF</button>
+    </div>
+  </div>
+
+  <div class="data-user">
+
+    <!-- Card 1 -->
+    <div class="card">
+      <h3>Situação cadastral do CPF</h3>
+      <p>Consulta na Receita Federal</p>
+      <div class="row-card">
+        <fa-icon class="icon" [icon]="['fas', 'user']" size="2xl"></fa-icon>
+        <div class="wrapper-info">
+          <label>Nome</label>
+          <p>Mariane de Sousa Oliveira</p>
+        </div>
+      </div>
+      <div class="row-card">
+        <fa-icon class="check icon" [icon]="['fas', 'circle-check']" size="2xl"></fa-icon>
+        <div class="wrapper-info">
+          <label>Situação do CPF</label>
+          <p>Regular</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card">
+      <h3>Conta aplicação</h3>
+      <p>Cooperativa Viacred</p>
+      <div class="row-card">
+        <fa-icon class="icon" [icon]="['fas', 'user']" size="2xl"></fa-icon>
+        <div class="wrapper-info">
+          <label>Número da conta</label>
+          <p>557932-4</p>
+        </div>
+      </div>
+      <div class="row-card">
+        <span>Duplicar conta</span>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card">
+      <h3>Conta corrente</h3>
+      <p>Cooperativa Viacred</p>
+      <div class="row-card">
+        <fa-icon class="icon" [icon]="['fas', 'user']" size="2xl"></fa-icon>
+        <div class="wrapper-info">
+          <label>Número da conta</label>
+          <p>778461-8</p>
+        </div>
+      </div>
+      <div class="row-card">
+        <span>Duplicar conta</span>
+      </div>
+    </div>
+
+  </div>
+  
+  <div class="actions">
+    <div class="wrapper">
+      <button class="button-02-azul">Iniciar nova admissão</button>
+      <button class="button-02-branco">Dicas para abertura da conta</button>
+    </div>
   </div>
 
 </div>
+ 
 

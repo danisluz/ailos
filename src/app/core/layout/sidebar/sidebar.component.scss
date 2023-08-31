@@ -18,16 +18,21 @@
 
   nav {
     color: $branco;
-    opacity: 1;
-    transition: opacity 0.3s ease;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 40px;
+    
+    a {
+      color: $branco;
+      transition: opacity 0.3s ease;
+      opacity: 1;
 
-    :hover {
-      opacity: 0.7;
+      &:hover {
+        opacity: 0.7;
+      }
     }
+
 
     .bars {
       opacity: 0.5;

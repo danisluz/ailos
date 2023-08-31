@@ -16,7 +16,7 @@ body {
   min-height: 100vh;
 }
 
-body, html, p, h1, h2, h3, h4, span {
+body, html, p, h1, h2, h3, h4, span, input, button {
   margin: 0;
   padding: 0;
 }
@@ -42,4 +42,85 @@ h2, h3 {
   font-weight: 600;
   font-size: 22px;
   margin-bottom: 5px;
+}
+
+
+//label input padrão
+.label-input {
+  font-family: $font-open-sans;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 6px 0 6px 0;
+}
+
+//input padrão
+.input-standard {
+  font-family: $font-open-sans;
+  font-size: 14px;
+  padding: 6px;
+  border-radius: 2px;
+  border: 1px solid $cinza-4;
+  background: $branco;
+}
+
+//botão padrão
+.button-01-azul {
+  background: $azul;
+  border: none;
+  padding: 0px 25px 0px 25px;
+  font-family: $font-open-sans;
+  color: $branco;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: 0.3s;
+  opacity: 1;
+  height: 34px;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.button-02-azul {
+  background: $azul;
+  border: none;
+  padding: 13px 25px 13px 25px;
+  font-family: $font-open-sans;
+  color: $branco;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: 0.3s;
+  opacity: 1;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.button-02-branco {
+  background: $branco;
+  border: none;
+  padding: 12px 25px 12px 25px;
+  font-family: $font-open-sans;
+  color: $azul;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: 0.3s;
+  border: 1px solid $azul;
+
+  &:hover {
+    background: $cinza-1;
+  }
 }

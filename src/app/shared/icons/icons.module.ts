@@ -5,7 +5,9 @@ import {
   faBars,
   faBell,
   faBuildingColumns,
+  faCheckCircle,
   faCommentDots,
+  faCreditCard,
   faGear,
   faMagnifyingGlass,
   faSliders,
@@ -28,7 +30,9 @@ export class IconsModule {
       faStar,
       faCommentDots,
       faSliders,
-      faBuildingColumns
+      faBuildingColumns,
+      faCreditCard,
+      faCheckCircle
     );
   }
 }
