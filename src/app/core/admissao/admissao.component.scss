@@ -1,0 +1,93 @@
+@import '../../../styles.scss';
+
+.admissao {
+
+  // barra de passos
+  .stepper-wrapper {
+    font-family: $font-open-sans;
+    font-size: 14px;
+    color: $cinza-4;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+
+    .stepper-item {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 1;
+
+      &::before {
+        position: absolute;
+        content: "";
+        border-bottom: 2px solid $cinza-2;
+        width: 100%;
+        top: 9px;
+        left: -50%;
+        z-index: 2;
+      }
+
+      &::after {
+        position: absolute;
+        content: "";
+        border-bottom: 2px solid $cinza-2;
+        width: 100%;
+        top: 9px;
+        left: 50%;
+        z-index: 2;
+      }
+
+      .step-counter {
+        position: relative;
+        z-index: 5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background-color: $cinza-2;
+        margin-bottom: 6px;
+        border: 2px solid $cinza-2;
+      }
+      
+      &.active {
+        .step-counter {
+          border: 2px solid $azul;
+          background-color: $cinza-1;
+        }
+        .step-name {
+          color: $azul;
+          font-weight: bold;
+        }
+      }
+
+      &.completed .step-counter {
+        background-color: $azul;
+        border: solid $azul;
+      }
+      
+      &.completed::after {
+        position: absolute;
+        content: "";
+        border-bottom: 2px solid $azul;
+        width: 100%;
+        top: 9px;
+        left: 50%;
+        z-index: 3;
+      }
+
+      &:first-child::before {
+        content: none;
+      }
+
+      &:last-child::after {
+        content: none;
+      }
+    }
+  }
+
+
+}
