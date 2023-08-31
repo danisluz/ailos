@@ -1,40 +1,39 @@
 import { Cliente } from '../models';
 import { SituacaoCpf } from '../models/situacao-cpf.enum';
+import { TipoConta } from '../models/tipo-conta.enum';
 
 export const clienteListMock:Cliente[] = [
   {
-    id: 1,
-    nome: 'Mariane de Souza Oliveira',
     cpf: '11122233344',
+    nome: 'Mariane de Souza Oliveira',
     situacaoCpf: SituacaoCpf.Regular,
     cooperativa: 'Cooperativa Viacredi',
     contas: [
       {
-        tipo: 'aplicação',
+        tipo: TipoConta.Aplicação,
         numero: '557932-4',
         banco: 'Cooperativa Viacredi'
       },
       {
-        tipo: 'corrente',
+        tipo: TipoConta.Corrente,
         numero: '778461-8',
         banco: 'Cooperativa Sicredi'
       }
     ],
   },
   {
-    id: 2,
-    nome: 'Clara Carolina Oliveira',
     cpf: '26186605361',
+    nome: 'Clara Carolina Oliveira',
     situacaoCpf: SituacaoCpf.Irregular,
     cooperativa: 'Cooperativa Sicred',
     contas: [
       {
-        tipo: 'aplicação',
+        tipo: TipoConta.Aplicação,
         numero: '557932-4',
         banco: 'Cooperativa Supercredi'
       },
       {
-        tipo: 'corrente',
+        tipo: TipoConta.Aplicação,
         numero: '778461-8',
         banco: 'Cooperativa Poacredi'
       }

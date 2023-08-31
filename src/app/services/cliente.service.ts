@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Cliente } from '../models';
-import { clienteListMock } from '../mocks/lista-cpf.mock';
+import { clienteListMock } from '../mocks/cliente-list.mock';
 
 @Injectable({
   providedIn: 'root'

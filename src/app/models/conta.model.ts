@@ -1,5 +1,7 @@
+import { TipoConta } from './tipo-conta.enum';
+
 export interface Conta {
-  tipo: string,
+  tipo: TipoConta,
   numero: string,
   banco: string,
 }
