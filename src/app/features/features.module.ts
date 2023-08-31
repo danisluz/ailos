@@ -3,13 +3,12 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 import { IconsModule } from '../shared/icons/icons.module';
-import { HeaderComponent } from './components/header/header.component';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { AdmissaoComponent } from './components/admissao/admissao.component';
+
 
 @NgModule({
   declarations: [
-    SidebarComponent,
-    HeaderComponent
+    AdmissaoComponent
   ],
   imports: [
     CommonModule,
@@ -17,8 +16,6 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     IconsModule
   ],
   exports: [
-    SidebarComponent,
-    HeaderComponent
   ]
 })
-export class CoreModule { }
+export class FeaturesModule { }

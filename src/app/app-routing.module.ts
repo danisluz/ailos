@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AdmissaoComponent } from './core/admissao/admissao.component';
+import { AdmissaoComponent } from './features/components/admissao/admissao.component';
 
 const routes: Routes = [
   {
