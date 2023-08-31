@@ -29,11 +29,13 @@
   </p>
 
   <div class="row">
-    <label class="label-input">CPF</label>
-    <div class="wrapper">
-      <input class="input-standard" name="cpf" placeholder="000.000.000-00" size="30" formControlName="cpf" />
-      <button class="button-01-azul" (click)="getClientes()">Consultar por CPF</button>
-    </div>
+    <form [formGroup]="admissaoForm">
+      <label class="label-input">CPF</label>
+      <div class="wrapper">
+        <input [(ngModel)]="cpf" class="input-standard" name="cpf" placeholder="000.000.000-00" size="35" formControlName="cpf" />
+        <button class="button-01-azul" (click)="getClienteByCpf()">Consultar por CPF</button>
+      </div>
+    </form>
   </div>
 
   <div class="data-user">

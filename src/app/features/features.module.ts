@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 
 import { IconsModule } from '../shared/icons/icons.module';
 import { AdmissaoComponent } from './components/admissao/admissao.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -13,7 +14,9 @@ import { AdmissaoComponent } from './components/admissao/admissao.component';
   imports: [
     CommonModule,
     RouterModule,
-    IconsModule
+    IconsModule,
+    FormsModule,
+    ReactiveFormsModule 
   ],
   exports: [
   ]

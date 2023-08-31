@@ -12,6 +12,12 @@ export class ClienteService {
     return of(clienteListMock);
   }
 
+  getClienteByCpf(cpf: string): Observable<Cliente | null> {
+    const clienteFound = clienteListMock.find(cliente => cliente.cpf === cpf);
+    
+    return of(clienteFound || null);
+  }
+
 }
 
 
