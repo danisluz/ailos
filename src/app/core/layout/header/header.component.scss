@@ -31,6 +31,23 @@
       flex-shrink: 0;
       border-radius: 42px;
       border: 1px solid $azul;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $azul;
+      position: relative;
+      background-color: $cinza-1;
+      cursor: pointer;
+
+      .icon-config {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        color: $azul;
+        background-color: $branco;
+        border-radius: 5px;
+      }
+
     }
     
     .client-name {
@@ -41,6 +58,32 @@
       font-weight: 700;
       border-radius: 25px;
       color: $azul;
+      cursor: pointer;
+    }
+
+    .notification {
+      cursor: pointer;
+
+      position: relative;
+      fa-icon {
+        color: $azul;
+      }
+
+      span {
+        background-color: $critic-vermelho;
+        border-radius: 25px;
+        width: 15px;
+        height: 15px;
+        display: block;
+        color: $branco;
+        font-family: $font-open-sans;
+        position: absolute;
+        top: -5px;
+        right: -5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
     }
 
   }
