@@ -95,12 +95,17 @@
     flex-direction: column;
 
     .tooltip {
+      margin-top: 5px;
       color: $critic-vermelho;
     }
 
     .wrapper {
       display: flex;
       margin-top: 6px;
+
+      .button-01-azul {
+        width: 200px;
+      }
 
       button {
         margin-left: 16px;
@@ -159,8 +164,16 @@
           color: $cinza-4;
         }
 
-        .check {
+        .icon-verde {
           color: $critic-verde;
+        }
+
+        .icon-laranja {
+          color: $critic-laranja;
+        }
+
+        .icon-cinza {
+          color: $cinza-4;
         }
 
         .wrapper-info {

@@ -10,6 +10,8 @@ import { Observable, finalize } from 'rxjs';
 import { Cliente } from 'src/app/models';
 import { ClienteService } from 'src/app/services/cliente.service';
 import { NotFoundValidator } from 'src/app/validators/cpfNotFound.validator';
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
+
 
 @Component({
   selector: 'app-admissao',
@@ -45,13 +47,14 @@ export class AdmissaoComponent implements OnInit {
       cpf: [
         '',
         {
-          validator: [Validators.required],
+          validators: [Validators.required],
           asyncValidators: [this.notFoundValidator.validateNotFound()],
           updateOn: 'blur',
         },
       ],
     });
   }
+  
 
   getMessageError(control: AbstractControl, campo?: string): any {
     switch (true) {
@@ -59,6 +62,16 @@ export class AdmissaoComponent implements OnInit {
         return `${campo} é obrigatório.`;
       case control.hasError('notFound'):
         return `${campo} não encontrado.`;
+    }
+  }
+
+  getIconAndClassForSituation(situacaoCpf: string): { icon: IconProp; cssClass: string } {
+    if (situacaoCpf === 'Regular') {
+      return { icon: ['fas', 'check-circle'], cssClass: 'icon-verde' };
+    } else if (situacaoCpf === 'Irregular') {
+      return { icon: ['fas', 'circle-exclamation'], cssClass: 'icon-laranja' };
+    } else {
+      return { icon: ['far', 'circle-exclamation'], cssClass: 'icon-cinza' };
     }
   }
 }

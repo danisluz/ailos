@@ -9,11 +9,13 @@ import {
   faBell,
   faBuildingColumns,
   faCheckCircle,
+  faCircleExclamation,
   faCommentDots,
   faCreditCard,
   faGear,
   faMagnifyingGlass,
   faSliders,
+  faSpinner,
   faStar,
   faUser,
 } from '@fortawesome/free-solid-svg-icons';
@@ -35,7 +37,9 @@ export class IconsModule {
       faSliders,
       faBuildingColumns,
       faCreditCard,
-      faCheckCircle
+      faCheckCircle,
+      faSpinner,
+      faCircleExclamation
     );
   }
 }

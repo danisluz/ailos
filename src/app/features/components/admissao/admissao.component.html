@@ -40,9 +40,9 @@
         />
 
         <button class="button-01-azul" (click)="getClienteByCpf()">
-          Consultar por CPF
+          <span *ngIf="!isLoading">Consultar por CPF</span>
+          <ailos-spinner *ngIf="isLoading"></ailos-spinner>
         </button>
-        <h1 *ngIf="isLoading">Loading...</h1>
       </div>
 
       <div class="tooltip">
@@ -65,10 +65,11 @@
       </div>
       <div class="row-card">
         <fa-icon
-          class="check icon"
-          [icon]="['fas', 'circle-check']"
+          [icon]="getIconAndClassForSituation(cliente.situacaoCpf).icon"
           size="2xl"
+          [ngClass]="getIconAndClassForSituation(cliente.situacaoCpf).cssClass"
         ></fa-icon>
+
         <div class="wrapper-info">
           <label>Situação do CPF</label>
           <p>{{ cliente.situacaoCpf }}</p>
@@ -78,7 +79,7 @@
 
     <!-- Card 2 -->
     <div *ngFor="let conta of cliente.contas" class="card">
-      <h3>{{ conta.tipo }}</h3>
+      <h3>Conta {{ conta.tipo }}</h3>
       <p>{{ conta.banco }}</p>
       <div class="row-card">
         <fa-icon

@@ -37,7 +37,7 @@ export const clienteListMock: Cliente[] = [
   {
     cpf: '64364525162',
     nome: 'Jéssica Elisa Isabella Vieira',
-    situacaoCpf: SituacaoCpf.cancelado,
+    situacaoCpf: SituacaoCpf.irregular,
     cooperativa: 'Cooperativa Morar',
     contas: [
       {

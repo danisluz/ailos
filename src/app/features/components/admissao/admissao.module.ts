@@ -6,6 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 import { AdmissaoComponent } from './admissao.component';
 import { IconsModule } from 'src/app/shared/icons/icons.module';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 const routes: Routes = [
   {
@@ -24,6 +25,7 @@ const routes: Routes = [
     ReactiveFormsModule,
     NgxMaskDirective,
     NgxMaskPipe,
+    SharedModule
   ],
   providers: [provideNgxMask()],
 })
