@@ -37,16 +37,24 @@
           mask="000.000.000-00"
           size="35"
           formControlName="cpf"
+          (focus)="isCpfRequired = true"
         />
 
-        <button class="button-01-azul" (click)="getClienteByCpf()">
+        <button
+          class="button-01-azul"
+          (click)="getClienteByCpf()"
+          (click)="isCpfRequired = true"
+          [disabled]="!cpf || cpf.length < 11 || !isCpfValid(cpf)"
+        >
           <span *ngIf="!isLoading">Consultar por CPF</span>
           <ailos-spinner *ngIf="isLoading"></ailos-spinner>
         </button>
       </div>
 
       <div class="tooltip">
-        {{ getMessageError(admissaoForm.controls["cpf"], "CPF ") }}
+        <ng-container *ngIf="isCpfRequired">
+          {{ getMessageError(admissaoForm.controls['cpf'], 'CPF ') }}
+        </ng-container>
       </div>
     </form>
   </div>
@@ -102,7 +110,9 @@
 
   <div class="actions">
     <div class="wrapper">
-      <button class="button-02-azul">Iniciar nova admissão</button>
+      <button *ngIf="cliente$ | async" class="button-02-azul">
+        Iniciar nova admissão
+      </button>
       <button class="button-02-branco">Dicas para abertura da conta</button>
     </div>
   </div>

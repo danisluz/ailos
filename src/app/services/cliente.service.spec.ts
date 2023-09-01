@@ -15,34 +15,34 @@ describe('ClienteService', () => {
     service = new ClienteService();
   });
 
-  it('should be created', () => {
+  it('deve ser criado', () => {
     expect(service).toBeTruthy();
   });
 
-  it('should return an array of clients', () => {
+  it('deve retornar um array de clientes', () => {
     service.getClientes().subscribe((clientes) => {
       expect(clientes).toBeTruthy();
       expect(clientes.length).toBeGreaterThan(0);
     });
   });
 
-  it('should return a client by CPF', () => {
-    const cpfToFind = '53603215710';
-    service.getClienteByCpf(cpfToFind).subscribe((cliente) => {
+  it('deve retornar um cliente pelo CPF', () => {
+    const cpfParaEncontrar = '53603215710';
+    service.getClienteByCpf(cpfParaEncontrar).subscribe((cliente) => {
       expect(cliente).toBeTruthy();
-      expect(cliente?.cpf).toBe(cpfToFind);
+      expect(cliente?.cpf).toBe(cpfParaEncontrar);
     });
   });
 
-  it('should check if CPF exists', () => {
-    const cpfToCheck = '53603215710';
-    service.checkHasCpf(cpfToCheck).subscribe((hasCpf) => {
-      expect(hasCpf).toBe(true);
+  it('deve verificar se o CPF existe', () => {
+    const cpfParaVerificar = '53603215710';
+    service.checkHasCpf(cpfParaVerificar).subscribe((temCpf) => {
+      expect(temCpf).toBe(true);
     });
 
-    const nonExistentCpf = '99999999999';
-    service.checkHasCpf(nonExistentCpf).subscribe((hasCpf) => {
-      expect(hasCpf).toBe(false);
+    const cpfInexistente = '99999999999';
+    service.checkHasCpf(cpfInexistente).subscribe((temCpf) => {
+      expect(temCpf).toBe(false);
     });
   });
 });

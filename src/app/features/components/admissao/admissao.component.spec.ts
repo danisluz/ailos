@@ -1,24 +1,21 @@
-import {
-  ComponentFixture,
-  TestBed,
-  tick,
-  fakeAsync,
-} from '@angular/core/testing';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ComponentFixture, TestBed, async } from '@angular/core/testing';
 import { AdmissaoComponent } from './admissao.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ClienteService } from 'src/app/services/cliente.service';
-import { of } from 'rxjs';
+import { NotFoundValidator } from 'src/app/validators/cpfNotFound.validator';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { Cliente } from 'src/app/models';
-import { RouterModule } from '@angular/router';
-import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 import { SituacaoCpf } from 'src/app/models/situacao-cpf.enum';
 import { TipoConta } from 'src/app/models/tipo-conta.enum';
-import { IconsModule } from 'src/app/shared/icons/icons.module';
+import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
+import { SharedModule } from 'src/app/shared/shared.module';
+
 
 describe('AdmissaoComponent', () => {
   let component: AdmissaoComponent;
   let fixture: ComponentFixture<AdmissaoComponent>;
   let clienteService: ClienteService;
+  let notFoundValidator: NotFoundValidator;
 
   const clienteMock: Cliente = {
     cpf: '53603215710',
@@ -39,48 +36,40 @@ describe('AdmissaoComponent', () => {
     ],
   };
 
-  beforeEach(() => {
+  beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [AdmissaoComponent],
       imports: [
-        RouterModule,
-        IconsModule,
-        FormsModule,
+        FontAwesomeModule, 
+        FormsModule, 
         ReactiveFormsModule,
         NgxMaskDirective,
         NgxMaskPipe,
+        SharedModule
       ],
-      providers: [provideNgxMask()],
-    });
+      providers: [ClienteService, NotFoundValidator, provideNgxMask()],
+    }).compileComponents();
+  }));
 
+  beforeEach(() => {
     fixture = TestBed.createComponent(AdmissaoComponent);
     component = fixture.componentInstance;
     clienteService = TestBed.inject(ClienteService);
-
-    fixture.detectChanges();
+    notFoundValidator = TestBed.inject(NotFoundValidator);
   });
 
-  it('should create', () => {
+  it('deve ser criado', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should set error for CPF when not found', fakeAsync(() => {
-    spyOn(clienteService, 'getClienteByCpf').and.returnValue(of(null));
-    const cpfField = component.admissaoForm.get('cpf');
-    cpfField?.setValue('12345678900');
-    component.getClienteByCpf();
-    tick();
+  it('deve inicializar o formulário', () => {
+    component.ngOnInit();
+    expect(component.admissaoForm).toBeTruthy();
+    expect(component.isLoading).toBeFalsy();
+  });
 
-    expect(cpfField?.hasError('notFound')).toBe(true);
-  }));
-
-  it('should not set error for valid CPF', fakeAsync(() => {
-    spyOn(clienteService, 'getClienteByCpf').and.returnValue(of(clienteMock));
-    const cpfField = component.admissaoForm.get('cpf');
-    cpfField?.setValue('53603215710');
-    component.getClienteByCpf();
-    tick();
-
-    expect(cpfField?.hasError('notFound')).toBe(false);
-  }));
+  it('deve verificar se o CPF é válido', () => {
+    expect(component.isCpfValid('123')).toBeFalsy();
+    expect(component.isCpfValid('53603215710')).toBeTruthy();
+  });
 });

@@ -19,10 +19,20 @@ import { IconProp } from '@fortawesome/fontawesome-svg-core';
   styleUrls: ['./admissao.component.scss'],
 })
 export class AdmissaoComponent implements OnInit {
+  obterIconeEClasseParaSituacao(arg0: string) {
+    throw new Error('Method not implemented.');
+  }
+  obterMensagemErro(controle: AbstractControl<any, any>, arg1: string) {
+    throw new Error('Method not implemented.');
+  }
+  obterClientePorCpf() {
+    throw new Error('Method not implemented.');
+  }
   cpf: string;
   cliente$: Observable<Cliente>;
   admissaoForm: FormGroup;
   isLoading: boolean;
+  isCpfRequired = false;
 
   constructor(
     private clienteService: ClienteService,
@@ -31,18 +41,6 @@ export class AdmissaoComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.createAdmissaoForm();
-  }
-
-  getClienteByCpf() {
-    this.isLoading = true;
-
-    this.cliente$ = this.clienteService
-      .getClienteByCpf(this.cpf)
-      .pipe(finalize(() => (this.isLoading = false)));
-  }
-
-  createAdmissaoForm() {
     this.admissaoForm = this.form.group({
       cpf: [
         '',
@@ -54,7 +52,22 @@ export class AdmissaoComponent implements OnInit {
       ],
     });
   }
-  
+
+  getClienteByCpf() {
+    this.isLoading = true;
+
+    this.cliente$ = this.clienteService
+      .getClienteByCpf(this.cpf)
+      .pipe(finalize(() => (this.isLoading = false)));
+  }
+
+  isCpfValid(cpf: string): boolean {
+    if (cpf) {
+      const numericCpf = cpf.replace(/\D/g, '');
+      return numericCpf.length === 11;
+    }
+    return false;
+  }
 
   getMessageError(control: AbstractControl, campo?: string): any {
     switch (true) {

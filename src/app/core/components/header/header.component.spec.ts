@@ -1,7 +1,5 @@
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
 
 import { HeaderComponent } from './header.component';
 import { RouterModule } from '@angular/router';
@@ -24,7 +22,7 @@ describe('HeaderComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('deveria criar', () => {
     expect(component).toBeTruthy();
   });
 });
