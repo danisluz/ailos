@@ -7,9 +7,8 @@ describe('ClienteService', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ FontAwesomeModule ],
-    })
-    .compileComponents();
+      imports: [FontAwesomeModule],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

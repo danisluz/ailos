@@ -1,5 +1,5 @@
 export enum SituacaoCpf {
-  Regular = 'Regular',
-  Irregular = 'Irregular',
-  Cancelado = 'Cancelado'
+  regular = 'Regular',
+  irregular = 'Irregular',
+  cancelado = 'Cancelado',
 }

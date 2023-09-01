@@ -1,4 +1,4 @@
-@import '../../../../styles.scss';
+@import "../../../../styles.scss";
 
 .header {
   background-color: $branco;
@@ -25,7 +25,7 @@
     align-items: center;
     gap: 10px;
 
-    .user-avatar{
+    .user-avatar {
       width: 42px;
       height: 42px;
       flex-shrink: 0;
@@ -47,9 +47,8 @@
         background-color: $branco;
         border-radius: 5px;
       }
-
     }
-    
+
     .client-name {
       padding: 5px 15px;
       border: 1px solid $azul;
@@ -85,7 +84,5 @@
         align-items: center;
       }
     }
-
   }
-
 }

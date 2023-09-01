@@ -1,4 +1,4 @@
-@import '../../../../styles.scss';
+@import "../../../../styles.scss";
 
 .sidebar {
   width: 100px;
@@ -22,7 +22,7 @@
     flex-direction: column;
     align-items: center;
     gap: 40px;
-    
+
     a {
       color: $branco;
       transition: opacity 0.3s ease;
@@ -33,10 +33,8 @@
       }
     }
 
-
     .bars {
       opacity: 0.5;
-
     }
 
     fa-icon {

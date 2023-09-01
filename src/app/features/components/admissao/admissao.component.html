@@ -39,10 +39,7 @@
           formControlName="cpf"
         />
 
-        <button
-          class="button-01-azul"
-          (click)="getClienteByCpf()"
-        >
+        <button class="button-01-azul" (click)="getClienteByCpf()">
           Consultar por CPF
         </button>
         <h1 *ngIf="isLoading">Loading...</h1>

@@ -7,16 +7,8 @@ import { CoreModule } from './core/core.module';
 import { FeaturesModule } from './features/features.module';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    CoreModule,
-    FeaturesModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  declarations: [AppComponent],
+  imports: [BrowserModule, AppRoutingModule, CoreModule, FeaturesModule],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

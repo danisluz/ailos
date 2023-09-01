@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import {
+  FaIconLibrary,
+  FontAwesomeModule,
+} from '@fortawesome/angular-fontawesome';
 import {
   faBars,
   faBell,
@@ -12,12 +15,12 @@ import {
   faMagnifyingGlass,
   faSliders,
   faStar,
-  faUser
+  faUser,
 } from '@fortawesome/free-solid-svg-icons';
 
 @NgModule({
   exports: [FontAwesomeModule],
-  imports: [FontAwesomeModule, BrowserModule]
+  imports: [FontAwesomeModule],
 })
 export class IconsModule {
   constructor(library: FaIconLibrary) {

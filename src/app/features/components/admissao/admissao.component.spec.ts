@@ -1,11 +1,13 @@
-import { ComponentFixture, TestBed, tick, fakeAsync } from '@angular/core/testing';
+import {
+  ComponentFixture,
+  TestBed,
+  tick,
+  fakeAsync,
+} from '@angular/core/testing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { AdmissaoComponent } from './admissao.component';
 import { ClienteService } from 'src/app/services/cliente.service';
-import { NotFoundValidator } from 'src/app/validators/cpfNotFound.validator';
-import { async, of } from 'rxjs';
-import { By } from '@angular/platform-browser';
+import { of } from 'rxjs';
 import { Cliente } from 'src/app/models';
 import { RouterModule } from '@angular/router';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
@@ -21,39 +23,36 @@ describe('AdmissaoComponent', () => {
   const clienteMock: Cliente = {
     cpf: '53603215710',
     nome: 'Mariane de Souza Oliveira',
-    situacaoCpf: SituacaoCpf.Regular,
+    situacaoCpf: SituacaoCpf.regular,
     cooperativa: 'Cooperativa Viacredi',
     contas: [
       {
-        tipo: TipoConta.Aplicação,
+        tipo: TipoConta.aplicação,
         numero: '557932-4',
-        banco: 'Cooperativa Viacredi'
+        banco: 'Cooperativa Viacredi',
       },
       {
-        tipo: TipoConta.Corrente,
+        tipo: TipoConta.corrente,
         numero: '778461-8',
-        banco: 'Cooperativa Sicredi'
-      }
+        banco: 'Cooperativa Sicredi',
+      },
     ],
-  }
+  };
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ 
-        AdmissaoComponent ],
+      declarations: [AdmissaoComponent],
       imports: [
         RouterModule,
         IconsModule,
         FormsModule,
         ReactiveFormsModule,
         NgxMaskDirective,
-        NgxMaskPipe
+        NgxMaskPipe,
       ],
-      providers: [
-        provideNgxMask()
-      ]
-    })
-    
+      providers: [provideNgxMask()],
+    });
+
     fixture = TestBed.createComponent(AdmissaoComponent);
     component = fixture.componentInstance;
     clienteService = TestBed.inject(ClienteService);

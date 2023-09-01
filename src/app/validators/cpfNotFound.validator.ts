@@ -1,7 +1,11 @@
 import { Injectable } from '@angular/core';
-import { AbstractControl, ValidationErrors, AsyncValidatorFn } from '@angular/forms';
+import {
+  AbstractControl,
+  ValidationErrors,
+  AsyncValidatorFn,
+} from '@angular/forms';
 import { Observable, of } from 'rxjs';
-import { catchError, map, switchMap } from 'rxjs/operators';
+import { catchError, map } from 'rxjs/operators';
 import { ClienteService } from '../services/cliente.service';
 
 @Injectable({ providedIn: 'root' })
@@ -13,11 +17,11 @@ export class NotFoundValidator {
       const cpf = control.value;
 
       return this.clienteService.checkHasCpf(cpf).pipe(
-        map((found: boolean) => {   
+        map((found: boolean) => {
           if (!found && cpf) {
             return { notFound: true };
           } else {
-            return null
+            return null;
           }
         }),
         catchError(() => of(null))

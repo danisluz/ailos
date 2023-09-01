@@ -5,10 +5,6 @@ import { RouterModule } from '@angular/router';
 import { AdmissaoModule } from './components/admissao/admissao.module';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    RouterModule,
-    AdmissaoModule
-  ]
+  imports: [CommonModule, RouterModule, AdmissaoModule],
 })
-export class FeaturesModule { }
+export class FeaturesModule {}

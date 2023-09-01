@@ -5,7 +5,8 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { Observable, debounceTime, finalize, tap } from 'rxjs';
+import { Observable, finalize } from 'rxjs';
+
 import { Cliente } from 'src/app/models';
 import { ClienteService } from 'src/app/services/cliente.service';
 import { NotFoundValidator } from 'src/app/validators/cpfNotFound.validator';
@@ -33,19 +34,22 @@ export class AdmissaoComponent implements OnInit {
 
   getClienteByCpf() {
     this.isLoading = true;
-    
-    this.cliente$ = this.clienteService.getClienteByCpf(this.cpf).pipe(
-      finalize(() => this.isLoading = false)
-    );
+
+    this.cliente$ = this.clienteService
+      .getClienteByCpf(this.cpf)
+      .pipe(finalize(() => (this.isLoading = false)));
   }
 
   createAdmissaoForm() {
     this.admissaoForm = this.form.group({
-      cpf: ['', {
-        validator: [Validators.required], 
-        asyncValidators: [this.notFoundValidator.validateNotFound()],
-        updateOn: 'blur',
-      }],
+      cpf: [
+        '',
+        {
+          validator: [Validators.required],
+          asyncValidators: [this.notFoundValidator.validateNotFound()],
+          updateOn: 'blur',
+        },
+      ],
     });
   }
 
@@ -54,7 +58,7 @@ export class AdmissaoComponent implements OnInit {
       case control.hasError('required'):
         return `${campo} é obrigatório.`;
       case control.hasError('notFound'):
-        return `${campo} não encontrado.`
+        return `${campo} não encontrado.`;
     }
   }
 }
