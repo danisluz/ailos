@@ -4,7 +4,7 @@ import { TipoConta } from '../models/tipo-conta.enum';
 
 export const clienteListMock:Cliente[] = [
   {
-    cpf: '11122233344',
+    cpf: '53603215710',
     nome: 'Mariane de Souza Oliveira',
     situacaoCpf: SituacaoCpf.Regular,
     cooperativa: 'Cooperativa Viacredi',
@@ -31,11 +31,6 @@ export const clienteListMock:Cliente[] = [
         tipo: TipoConta.Aplicação,
         numero: '557932-4',
         banco: 'Cooperativa Supercredi'
-      },
-      {
-        tipo: TipoConta.Aplicação,
-        numero: '778461-8',
-        banco: 'Cooperativa Poacredi'
       }
     ],
   }

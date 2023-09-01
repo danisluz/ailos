@@ -1,5 +1,4 @@
 <div class="admissao">
-
   <div class="stepper-wrapper">
     <div class="stepper-item active">
       <div class="step-counter"></div>
@@ -18,13 +17,11 @@
       <div class="step-name">Admissão</div>
     </div>
   </div>
-  
-  
-  <h2>
-    Informe o CPF do futuro cooperado (a)
-  </h2>
+
+  <h2>Informe o CPF do futuro cooperado (a)</h2>
   <p>
-    Se necessário, você poderá duplicar uma conta existente ou pausar e retomar este cadastro futuramente.<br/>
+    Se necessário, você poderá duplicar uma conta existente ou pausar e retomar
+    este cadastro futuramente.<br />
     Digite apenas os números (sem pontos ou traços).
   </p>
 
@@ -32,14 +29,31 @@
     <form [formGroup]="admissaoForm">
       <label class="label-input">CPF</label>
       <div class="wrapper">
-        <input [(ngModel)]="cpf" class="input-standard" name="cpf" mask="000.000.000-00" placeholder="000.000.000-00" size="35" formControlName="cpf" />
-        <button class="button-01-azul" (click)="getClienteByCpf()">Consultar por CPF</button>
+        <input
+          [(ngModel)]="cpf"
+          class="input-standard"
+          name="cpf"
+          placeholder="000.000.000-00"
+          mask="000.000.000-00"
+          size="35"
+          formControlName="cpf"
+        />
+
+        <button
+          class="button-01-azul"
+          (click)="getClienteByCpf()"
+        >
+          Consultar por CPF
+        </button>
+      </div>
+
+      <div class="tooltip">
+        {{ getMessageError(admissaoForm.controls["cpf"], "CPF ") }}
       </div>
     </form>
   </div>
 
-  <div class="data-user">
-
+  <div class="data-user" *ngIf="cliente$ | async as cliente">
     <!-- Card 1 -->
     <div class="card">
       <h3>Situação cadastral do CPF</h3>
@@ -48,27 +62,35 @@
         <fa-icon class="icon" [icon]="['fas', 'user']" size="2xl"></fa-icon>
         <div class="wrapper-info">
           <label>Nome</label>
-          <p>Mariane de Sousa Oliveira</p>
+          <p>{{ cliente.nome }}</p>
         </div>
       </div>
       <div class="row-card">
-        <fa-icon class="check icon" [icon]="['fas', 'circle-check']" size="2xl"></fa-icon>
+        <fa-icon
+          class="check icon"
+          [icon]="['fas', 'circle-check']"
+          size="2xl"
+        ></fa-icon>
         <div class="wrapper-info">
           <label>Situação do CPF</label>
-          <p>Regular</p>
+          <p>{{ cliente.situacaoCpf }}</p>
         </div>
       </div>
     </div>
 
     <!-- Card 2 -->
-    <div class="card">
-      <h3>Conta aplicação</h3>
-      <p>Cooperativa Viacred</p>
+    <div *ngFor="let conta of cliente.contas" class="card">
+      <h3>{{ conta.tipo }}</h3>
+      <p>{{ conta.banco }}</p>
       <div class="row-card">
-        <fa-icon class="icon" [icon]="['fas', 'credit-card']" size="2xl"></fa-icon>
+        <fa-icon
+          class="icon"
+          [icon]="['fas', 'credit-card']"
+          size="2xl"
+        ></fa-icon>
         <div class="wrapper-info">
           <label>Número da conta</label>
-          <p>557932-4</p>
+          <p>{{ conta.numero }}</p>
         </div>
       </div>
       <div class="row-card">
@@ -77,34 +99,12 @@
         </a>
       </div>
     </div>
-
-    <!-- Card 3 -->
-    <div class="card">
-      <h3>Conta corrente</h3>
-      <p>Cooperativa Viacred</p>
-      <div class="row-card">
-        <fa-icon class="icon" [icon]="['fas', 'credit-card']" size="2xl"></fa-icon>
-        <div class="wrapper-info">
-          <label>Número da conta</label>
-          <p>778461-8</p>
-        </div>
-      </div>
-      <div class="row-card">
-        <a class="btn-duplicar-conta" href="#">
-          <span>Duplicar conta</span>
-        </a>
-      </div>
-    </div>
-
   </div>
-  
+
   <div class="actions">
     <div class="wrapper">
       <button class="button-02-azul">Iniciar nova admissão</button>
       <button class="button-02-branco">Dicas para abertura da conta</button>
     </div>
   </div>
-
 </div>
- 
-

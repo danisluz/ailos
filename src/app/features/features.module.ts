@@ -6,9 +6,10 @@ import { IconsModule } from '../shared/icons/icons.module';
 import { AdmissaoComponent } from './components/admissao/admissao.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
+import { NotFoundValidator } from '../validators/cpfNotFound.validator';
 @NgModule({
   declarations: [
-    AdmissaoComponent
+    AdmissaoComponent,
   ],
   imports: [
     CommonModule,
@@ -22,7 +23,7 @@ import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
   exports: [
   ],
   providers: [
-    provideNgxMask(),
+    provideNgxMask()
   ]
 })
 export class FeaturesModule { }

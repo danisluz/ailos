@@ -12,16 +12,13 @@ export class ClienteService {
     return of(clienteListMock);
   }
 
-  getClienteByCpf(cpf: string): Observable<Cliente | null> {
+  getClienteByCpf(cpf: string): Observable<Cliente | undefined> {
     const clienteFound = clienteListMock.find(cliente => cliente.cpf === cpf);
-    
-    return of(clienteFound || null);
+    return of(clienteFound);
+  }
+
+  checkHasCpf(cpf: string): Observable<boolean> {
+    return of(clienteListMock.some(item => item.cpf === cpf));
   }
 
 }
-
-
-// debauceTime
-// escrever documentação com cpfs validos
-
-// enum tipo de conta poupanca/corrente/conjunta/aplicacao
