@@ -38,13 +38,14 @@
           size="35"
           formControlName="cpf"
           (focus)="isCpfRequired = true"
+          (focusout)="isCpfValid(cpf)"
         />
 
         <button
           class="button-01-azul"
           (click)="getClienteByCpf()"
           (click)="isCpfRequired = true"
-          [disabled]="!cpf || cpf.length < 11 || !isCpfValid(cpf)"
+          [disabled]="!isCpfValid(cpf)"
         >
           <span *ngIf="!isLoading">Consultar por CPF</span>
           <ailos-spinner *ngIf="isLoading"></ailos-spinner>

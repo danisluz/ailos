@@ -84,6 +84,10 @@ h2, h3 {
   &:hover {
     opacity: 0.8;
   }
+
+  &:disabled {
+    opacity: 0.5;
+  }
 }
 
 .button-02-azul {
