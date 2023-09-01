@@ -32,7 +32,7 @@
     <form [formGroup]="admissaoForm">
       <label class="label-input">CPF</label>
       <div class="wrapper">
-        <input [(ngModel)]="cpf" class="input-standard" name="cpf" placeholder="000.000.000-00" size="35" formControlName="cpf" />
+        <input [(ngModel)]="cpf" class="input-standard" name="cpf" mask="000.000.000-00" placeholder="000.000.000-00" size="35" formControlName="cpf" />
         <button class="button-01-azul" (click)="getClienteByCpf()">Consultar por CPF</button>
       </div>
     </form>

@@ -5,8 +5,7 @@ import { RouterModule } from '@angular/router';
 import { IconsModule } from '../shared/icons/icons.module';
 import { AdmissaoComponent } from './components/admissao/admissao.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
-
+import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 @NgModule({
   declarations: [
     AdmissaoComponent
@@ -16,9 +15,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     RouterModule,
     IconsModule,
     FormsModule,
-    ReactiveFormsModule 
+    ReactiveFormsModule,
+    NgxMaskDirective,
+    NgxMaskPipe,
   ],
   exports: [
+  ],
+  providers: [
+    provideNgxMask(),
   ]
 })
 export class FeaturesModule { }
