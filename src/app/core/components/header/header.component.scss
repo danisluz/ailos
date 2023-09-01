@@ -1,5 +1,7 @@
 @import "../../../../styles.scss";
 
+
+
 .header {
   background-color: $branco;
   color: $preto;
@@ -8,6 +10,12 @@
   flex-direction: row;
   justify-content: space-between;
   padding: 24px;
+  flex-direction: column-reverse;
+  gap: 10px;
+  
+  @include md {
+    flex-direction: row;
+  }
 
   .wrapper-left {
     text-align: left;
@@ -24,6 +32,7 @@
     display: flex;
     align-items: center;
     gap: 10px;
+    justify-content: flex-end;
 
     .user-avatar {
       width: 42px;

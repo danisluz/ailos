@@ -17,6 +17,7 @@
       flex-direction: column;
       align-items: center;
       flex: 1;
+      text-align: center;
 
       &::before {
         position: absolute;
@@ -102,9 +103,22 @@
     .wrapper {
       display: flex;
       margin-top: 6px;
+      flex-direction: column;
+      gap: 10px;
 
       .button-01-azul {
-        width: 200px;
+        width: 100% !important;
+        margin: 0;
+      }
+      
+      @include md {
+        flex-direction: row;
+        margin-bottom: 0;
+        
+        .button-01-azul {
+          margin-top: 0px;
+          width: 200px !important;
+        }
       }
 
       button {
@@ -114,16 +128,27 @@
   }
 
   .data-user {
+    min-width: 120px !important;
     display: flex;
     gap: 16px;
+    flex-direction: column;
+    margin-bottom: 100px;
+    
+    @include md {
+      flex-direction: row;
+      margin-bottom: 0;
+    }
 
     .card {
-      width: 270px;
       height: 183px;
       padding: 20px;
       border-radius: 2px;
       background: $branco;
       box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+
+      @include md {
+        width: 270px;
+      }
 
       h3 {
         font-family: $font-open-sans;
@@ -208,6 +233,12 @@
       padding: 18px 24px 18px 24px;
       display: flex;
       gap: 16px;
+      flex-direction: column;
+      
+      @include md {
+        flex-direction: row;
+      }
+
     }
   }
 }
