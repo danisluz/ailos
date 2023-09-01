@@ -5,10 +5,9 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { Observable } from 'rxjs';
+import { Observable, debounceTime, finalize, tap } from 'rxjs';
 import { Cliente } from 'src/app/models';
 import { ClienteService } from 'src/app/services/cliente.service';
-import { cpfValidator, isValidCPF } from 'src/app/validators/cpf.validator';
 import { NotFoundValidator } from 'src/app/validators/cpfNotFound.validator';
 
 @Component({
@@ -20,6 +19,7 @@ export class AdmissaoComponent implements OnInit {
   cpf: string;
   cliente$: Observable<Cliente>;
   admissaoForm: FormGroup;
+  isLoading: boolean;
 
   constructor(
     private clienteService: ClienteService,
@@ -32,16 +32,11 @@ export class AdmissaoComponent implements OnInit {
   }
 
   getClienteByCpf() {
-    this.cliente$ = this.clienteService.getClienteByCpf(this.cpf);
-  }
-
-  isValidCPF() {
-    if (isValidCPF(this.admissaoForm.get('cpf')?.value)) {
-      this.admissaoForm.get('cpf')?.setErrors(null);
-      return true;
-    } else {
-      return false;
-    }
+    this.isLoading = true;
+    
+    this.cliente$ = this.clienteService.getClienteByCpf(this.cpf).pipe(
+      finalize(() => this.isLoading = false)
+    );
   }
 
   createAdmissaoForm() {

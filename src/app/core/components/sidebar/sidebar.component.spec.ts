@@ -4,6 +4,8 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { SidebarComponent } from './sidebar.component';
+import { RouterModule } from '@angular/router';
+import { IconsModule } from 'src/app/shared/icons/icons.module';
 
 describe('SidebarComponent', () => {
   let component: SidebarComponent;
@@ -11,7 +13,11 @@ describe('SidebarComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SidebarComponent ]
+      declarations: [ SidebarComponent ],
+      imports: [
+        RouterModule,
+        IconsModule
+      ]
     })
     .compileComponents();
   }));

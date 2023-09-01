@@ -43,8 +43,10 @@
           class="button-01-azul"
           (click)="getClienteByCpf()"
         >
+          
           Consultar por CPF
         </button>
+        <h1 *ngIf="isLoading">Putinho</h1>
       </div>
 
       <div class="tooltip">
